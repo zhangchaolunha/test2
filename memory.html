@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071830" />
+  <title>PiXO · Memory</title>
+  <link rel="stylesheet" href="./memory.css" />
+</head>
+<body>
+  <main class="memory-shell">
+    <section class="memory-phone" aria-label="PiXO Memory 页面">
+      <header class="memory-topbar">
+        <button class="pixel-icon-btn" id="memoryBack" aria-label="返回">‹</button>
+        <div class="title-group"><small>PIXO ARCHIVE</small><h1>Memory</h1></div>
+        <button class="pixel-icon-btn" id="memoryInfo" aria-label="Memory 说明">?</button>
+      </header>
+
+      <section class="memory-hero">
+        <div class="hero-copy">
+          <span class="eyebrow">MOCHI'S STORY</span>
+          <h2>它经历过的，<br>不会被清零。</h2>
+          <p>旅行、相遇、重复到访和偶然捡到的东西，会慢慢变成属于 Mochi 的人生。</p>
+        </div>
+        <div class="hero-count"><strong id="memoryTotal">4</strong><span>MEMORIES</span></div>
+      </section>
+
+      <nav class="memory-tabs" aria-label="Memory 筛选">
+        <button class="memory-tab active" data-filter="all">全部</button>
+        <button class="memory-tab" data-filter="explore">探索</button>
+        <button class="memory-tab" data-filter="collect">收藏</button>
+      </nav>
+
+      <section class="timeline-wrap">
+        <div class="timeline-line"></div>
+        <div id="memoryList" class="memory-list"></div>
+      </section>
+    </section>
+
+    <aside class="memory-note">
+      <span>PAGE 06 / MEMORY</span>
+      <strong>这一页完全由 HTML 卡片和时间线构成。</strong>
+      <p>大图只用于定视觉方向。筛选、日期、标题、正文、标签、展开层全部是前端组件；只有 Memory 内容插画使用图片。</p>
+    </aside>
+  </main>
+
+  <div class="memory-modal" id="memoryModal" aria-hidden="true">
+    <div class="memory-modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <img id="modalImage" alt="Memory 插画" />
+      <div class="modal-body">
+        <small id="modalDate"></small>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="memory-toast" id="memoryToast"></div>
+  <script src="./memory.js"></script>
+</body>
+</html>
