@@ -4,45 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#071830" />
-  <title>PiXO · Home</title>
+  <title>PiXO Demo</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <main class="page-shell">
-    <section class="pixo-screen" id="pixoScreen" aria-label="PiXO 首页">
-      <img class="home-slice hero-slice" src="./assets/home/home-hero.webp" alt="PiXO 首页上半部分像素场景" draggable="false" />
-      <img class="home-slice lower-slice" src="./assets/home/home-lower.webp" alt="PiXO 首页属性、事件、Memory 与菜单" draggable="false" />
+    <!-- PAGE 01 / HOME -->
+    <section class="page-view" data-page="home">
+      <section class="pixo-screen home-screen" id="homeScreen" aria-label="PiXO 首页">
+        <img class="home-slice hero-slice" src="./assets/home/home-hero.webp" alt="PiXO 首页上半部分像素场景" draggable="false" />
+        <img class="home-slice lower-slice" src="./assets/home/home-lower.webp" alt="PiXO 首页属性、事件、Memory 与菜单" draggable="false" />
 
-      <!-- 顶部资料 / 资源 -->
-      <button class="hotspot profile" data-action="profile" aria-label="查看 Mochi"></button>
-      <button class="hotspot resource coin" data-action="coin" aria-label="金币"></button>
-      <button class="hotspot resource gem" data-action="gem" aria-label="钻石"></button>
-      <button class="hotspot resource energy" data-action="energy" aria-label="体力"></button>
+        <button class="hotspot profile" data-route="detail" aria-label="查看 Mochi 详情"></button>
+        <button class="hotspot resource coin" data-action="coin" aria-label="金币"></button>
+        <button class="hotspot resource gem" data-action="gem" aria-label="钻石"></button>
+        <button class="hotspot resource energy" data-action="energy" aria-label="体力"></button>
 
-      <!-- 右侧功能 -->
-      <button class="hotspot side activity" data-action="activity" aria-label="活动"></button>
-      <button class="hotspot side travel-side" data-route="travel" aria-label="旅行"></button>
-      <button class="hotspot side collection-side" data-route="collection" aria-label="收藏"></button>
-      <button class="hotspot side shop-side" data-route="shop" aria-label="商店"></button>
+        <button class="hotspot side activity" data-action="activity" aria-label="活动"></button>
+        <button class="hotspot side travel-side" data-route="travel" aria-label="旅行"></button>
+        <button class="hotspot side collection-side" data-route="collection" aria-label="收藏"></button>
+        <button class="hotspot side shop-side" data-route="shop" aria-label="商店"></button>
 
-      <!-- 内容卡 -->
-      <button class="hotspot event-mail" data-action="event" aria-label="查看今日事件"></button>
-      <button class="hotspot memory-card" data-route="memory" aria-label="查看海边记忆"></button>
+        <button class="hotspot event-mail" data-action="event" aria-label="查看今日事件"></button>
+        <button class="hotspot memory-card" data-route="memory" aria-label="查看海边记忆"></button>
 
-      <!-- 底部 5 个主入口 -->
-      <button class="hotspot nav diary" data-route="diary" aria-label="日志"></button>
-      <button class="hotspot nav travel" data-route="travel" aria-label="旅行"></button>
-      <button class="hotspot nav collection" data-route="collection" aria-label="收藏"></button>
-      <button class="hotspot nav mypixo" data-route="mypixo" aria-label="我的 PiXO"></button>
-      <button class="hotspot nav shop" data-route="shop" aria-label="商店"></button>
-
-      <div class="tap-wave" id="tapWave"></div>
+        <button class="hotspot nav diary" data-route="diary" aria-label="日志"></button>
+        <button class="hotspot nav travel" data-route="travel" aria-label="旅行"></button>
+        <button class="hotspot nav collection" data-route="collection" aria-label="收藏"></button>
+        <button class="hotspot nav mypixo" data-route="mypixo" aria-label="我的 PiXO"></button>
+        <button class="hotspot nav shop" data-route="shop" aria-label="商店"></button>
+        <div class="tap-wave"></div>
+      </section>
     </section>
 
-    <aside class="build-note">
-      <span>PAGE 01 / HOME</span>
-      <strong>首页已按定稿竖版实现</strong>
-      <p>941 × 1672 原图比例还原。点击旅行、收藏、Memory、我的 PiXO、商店等入口可以验证交互位置。</p>
+    <!-- PAGE 02 / PIXO DETAIL -->
+    <section class="page-view" data-page="detail" hidden>
+      <section class="pixo-screen detail-screen" id="detailScreen" aria-label="PiXO 详情">
+        <img class="detail-slice" src="./assets/detail/detail-header.webp" alt="PiXO 详情页顶部" draggable="false" />
+        <img class="detail-slice" src="./assets/detail/detail-hero.webp" alt="Mochi 主视觉与等级" draggable="false" />
+        <img class="detail-slice" src="./assets/detail/detail-traits.webp" alt="Form Face Trait Halo" draggable="false" />
+        <img class="detail-slice" src="./assets/detail/detail-items.webp" alt="携带物品" draggable="false" />
+        <img class="detail-slice" src="./assets/detail/detail-cta.webp" alt="出发按钮" draggable="false" />
+
+        <button class="detail-hit detail-back" data-route="home" aria-label="返回首页"></button>
+        <button class="detail-hit detail-edit" data-action="edit-pixo" aria-label="编辑 PiXO"></button>
+
+        <button class="detail-hit detail-tab tab-form selected" data-detail-tab="Form" aria-label="Form"></button>
+        <button class="detail-hit detail-tab tab-face" data-detail-tab="Face" aria-label="Face"></button>
+        <button class="detail-hit detail-tab tab-trait" data-detail-tab="Trait" aria-label="Trait"></button>
+        <button class="detail-hit detail-tab tab-halo" data-detail-tab="Halo" aria-label="Halo"></button>
+
+        <button class="detail-hit item-slot item-1 selected" data-item="能量饮料" aria-label="能量饮料"></button>
+        <button class="detail-hit item-slot item-2 selected" data-item="探险锤" aria-label="探险锤"></button>
+        <button class="detail-hit item-slot item-3 selected" data-item="旅行票" aria-label="旅行票"></button>
+
+        <button class="detail-hit detail-start" data-route="travel" aria-label="装备 Mochi 出发"></button>
+        <div class="tap-wave"></div>
+      </section>
+    </section>
+
+    <aside class="build-note" id="buildNote">
+      <span id="buildPage">PAGE 01 / HOME</span>
+      <strong id="buildTitle">首页 · 像素生活场景</strong>
+      <p id="buildText">点击左上 Mochi 资料卡进入第 2 页。其他未完成页面先显示下一页提示，不伪装成已实现。</p>
     </aside>
   </main>
 
@@ -51,8 +75,8 @@
       <button class="preview-close" id="previewClose">×</button>
       <small>NEXT PAGE</small>
       <h2 id="previewTitle">准备旅行</h2>
-      <p id="previewText">第 2 页会继续按照“大图 → 小图 → 代码 → 交互”的顺序实现。</p>
-      <button class="preview-primary" id="previewBack">返回首页</button>
+      <p id="previewText">这个页面会继续按照“大图 → 拆素材 → 写代码 → 接交互”的顺序实现。</p>
+      <button class="preview-primary" id="previewBack">返回当前页面</button>
     </div>
   </div>
 
