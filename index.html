@@ -63,10 +63,36 @@
       </section>
     </section>
 
+    <!-- PAGE 03 / PREPARE TRAVEL -->
+    <section class="page-view" data-page="travel" hidden>
+      <section class="pixo-screen travel-screen" id="travelScreen" aria-label="准备旅行">
+        <img class="travel-prep-art" src="./assets/travel/prepare-page.webp" alt="PiXO 准备旅行页面" draggable="false" />
+
+        <button class="travel-hit travel-back" data-route="detail" aria-label="返回 PiXO 详情"></button>
+        <button class="travel-hit travel-help" data-action="travel-help" aria-label="旅行说明"></button>
+        <button class="travel-hit destination-hit" data-action="destination" aria-label="查看海边小镇"></button>
+
+        <button class="travel-duration duration-short" data-duration="short">短途</button>
+        <button class="travel-duration duration-normal selected" data-duration="normal">✦ 普通</button>
+        <button class="travel-duration duration-long" data-duration="long">长途</button>
+
+        <div class="travel-count" id="travelItemCount">携带物品（3/5）</div>
+        <button class="travel-item selected item-drink" data-travel-item="能量饮料" aria-label="能量饮料"></button>
+        <button class="travel-item selected item-tool" data-travel-item="寻宝工具" aria-label="寻宝工具"></button>
+        <button class="travel-item selected item-ticket" data-travel-item="旅行票" aria-label="旅行票"></button>
+        <button class="travel-item empty item-empty-1" data-action="empty-slot" aria-label="空物品槽"></button>
+        <button class="travel-item empty item-empty-2" data-action="empty-slot" aria-label="空物品槽"></button>
+
+        <button class="travel-start" id="travelStartBtn" aria-label="让 Mochi 出发"></button>
+        <div class="travel-draft" id="travelDraft">海边小镇 · 普通 · 3 件物品</div>
+        <div class="tap-wave"></div>
+      </section>
+    </section>
+
     <aside class="build-note" id="buildNote">
       <span id="buildPage">PAGE 01 / HOME</span>
       <strong id="buildTitle">首页 · 像素生活场景</strong>
-      <p id="buildText">点击左上 Mochi 资料卡进入第 2 页。其他未完成页面先显示下一页提示，不伪装成已实现。</p>
+      <p id="buildText">点击左上 Mochi 资料卡进入第 2 页；也可以直接点击旅行进入第 3 页。</p>
     </aside>
   </main>
 
@@ -74,8 +100,8 @@
     <div class="preview-panel">
       <button class="preview-close" id="previewClose">×</button>
       <small>NEXT PAGE</small>
-      <h2 id="previewTitle">准备旅行</h2>
-      <p id="previewText">这个页面会继续按照“大图 → 拆素材 → 写代码 → 接交互”的顺序实现。</p>
+      <h2 id="previewTitle">旅行中</h2>
+      <p id="previewText">下一页继续按照“大图 → 小图 → 代码 → 交互”的顺序实现。</p>
       <button class="preview-primary" id="previewBack">返回当前页面</button>
     </div>
   </div>
