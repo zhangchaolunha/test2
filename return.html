@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071830" />
+  <title>PiXO · 旅行回来</title>
+  <link rel="stylesheet" href="./return.css" />
+</head>
+<body>
+  <main class="return-shell">
+    <section class="return-phone" aria-label="PiXO 旅行回来页面">
+      <header class="return-topbar">
+        <button class="pixel-icon-btn" id="returnBack" aria-label="返回旅行中">‹</button>
+        <h1>旅行回来</h1>
+        <button class="pixel-icon-btn" id="returnInfo" aria-label="旅行说明">?</button>
+      </header>
+
+      <section class="return-hero-card">
+        <img class="return-hero-image" src="./assets/detail/detail-hero.webp" alt="Mochi 海边归来" />
+        <div class="return-hero-copy">
+          <span class="mini-label">TRAVEL COMPLETE</span>
+          <h2>Mochi 回来了！</h2>
+          <p id="returnQuote">“海风把围巾吹得乱七八糟，不过我找到好东西啦。”</p>
+        </div>
+        <div class="return-route-chip" id="returnRouteChip">海边小镇 · 普通旅行</div>
+      </section>
+
+      <section class="paper-card rewards-section">
+        <div class="section-title-row">
+          <div>
+            <span class="mini-label dark">LOOT</span>
+            <h3>本次收获</h3>
+          </div>
+          <span class="reward-total" id="rewardTotal">4 类</span>
+        </div>
+
+        <div class="reward-grid">
+          <button class="reward-item" data-reward="蓝色贝壳">
+            <div class="reward-art reward-shell">🐚</div>
+            <strong>蓝色贝壳</strong>
+            <span id="rewardShellCount">×3</span>
+          </button>
+          <button class="reward-item" data-reward="旅行照片">
+            <img src="./assets/postcard-moonbay.svg" alt="旅行照片" />
+            <strong>旅行照片</strong>
+            <span id="rewardPhotoCount">×1</span>
+          </button>
+          <button class="reward-item" data-reward="漂流瓶">
+            <div class="reward-art">🧪</div>
+            <strong>漂流瓶</strong>
+            <span id="rewardBottleCount">×1</span>
+          </button>
+          <button class="reward-item" data-reward="海洋碎片">
+            <div class="reward-art">💎</div>
+            <strong>海洋碎片</strong>
+            <span id="rewardShardCount">×5</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="paper-card memory-section">
+        <div class="section-title-row">
+          <div>
+            <span class="mini-label dark">NEW MEMORY</span>
+            <h3>解锁 Memory</h3>
+          </div>
+          <span class="new-badge">NEW</span>
+        </div>
+        <button class="memory-unlock" id="memoryUnlock">
+          <img src="./assets/postcard-moonbay.svg" alt="第一次看见大海" />
+          <div class="memory-copy">
+            <strong>「第一次看见大海」</strong>
+            <p>Mochi 第一次真正走到海岸边。浪花很吵，它却在那里坐了很久。</p>
+            <div class="memory-tags"><span>海边</span><span>灯塔</span><span>首次</span></div>
+          </div>
+          <span class="memory-arrow">›</span>
+        </button>
+      </section>
+
+      <section class="paper-card stats-section">
+        <div class="section-title-row compact">
+          <div>
+            <span class="mini-label dark">PIXO CHANGE</span>
+            <h3>这次旅行留下了什么</h3>
+          </div>
+        </div>
+        <div class="stat-change-grid">
+          <div class="stat-change"><span>♥</span><small>温柔</small><b>86 → 88</b><em>+2</em></div>
+          <div class="stat-change"><span>★</span><small>好奇</small><b>78 → 81</b><em>+3</em></div>
+          <div class="stat-change"><span>◆</span><small>治愈</small><b>92 → 93</b><em>+1</em></div>
+        </div>
+        <div class="trip-meta">
+          <div><span>旅行耗时</span><b id="returnDuration">3小时28分</b></div>
+          <div><span>携带物品</span><b id="returnItems">3 件</b></div>
+          <div><span>当前 Halo</span><b id="returnHalo">探索环</b></div>
+        </div>
+      </section>
+
+      <section class="return-actions">
+        <button class="secondary-pixel-btn" id="shareTrip">分享旅程</button>
+        <button class="primary-pixel-btn" id="finishReturn">太棒了！</button>
+      </section>
+    </section>
+
+    <aside class="return-note">
+      <span>PAGE 05 / TRAVEL RETURN</span>
+      <strong>这一页开始用真正的 HTML 组件拼。</strong>
+      <p>大图只作为布局参考。页面中的导航、卡片、奖励格、Memory、属性变化和按钮均由 HTML + CSS + JS 组成，图片只承担插画与内容素材。</p>
+    </aside>
+  </main>
+
+  <div class="return-toast" id="returnToast"></div>
+  <script src="./return.js"></script>
+</body>
+</html>
