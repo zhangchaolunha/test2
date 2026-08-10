@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f1e8" />
+  <title>PiXO Life Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone" aria-label="PiXO Demo">
+      <header class="topbar">
+        <div>
+          <div class="brand"><span class="brand-dot"></span>PiXO</div>
+          <p id="topSubtitle">今天也不知道它会跑去哪。</p>
+        </div>
+        <button class="icon-btn" id="soundBtn" aria-label="切换声音">♪</button>
+      </header>
+
+      <section class="screen active" data-screen="home">
+        <div class="hero-card home-scene" id="homeScene">
+          <img class="scene-art" src="./assets/pixo-home.svg" alt="PiXO 在家中的原创插画" />
+          <div class="status-pill" id="homeStatus"><span class="pulse"></span>在家 · 发呆中</div>
+          <div class="speech" id="pixoSpeech">窗外那朵云，看起来像一块没拼完的像素。</div>
+        </div>
+
+        <div class="identity-row">
+          <div>
+            <div class="eyebrow">FIRST CONNECTION · #002813</div>
+            <h1>NOA <span>诺亚</span></h1>
+          </div>
+          <button class="mini-link" data-go="pixo">查看档案 ↗</button>
+        </div>
+
+        <div class="trait-strip">
+          <div class="trait-chip"><span>☾</span><b>夜猫子</b><small>夜间事件 +15%</small></div>
+          <div class="trait-chip"><span>↝</span><b>路痴</b><small>隐藏发现 +12%</small></div>
+          <div class="trait-chip halo-chip"><span>◎</span><b id="equippedHaloName">疾行 Halo</b><small id="equippedHaloBonus">旅行 CD -20%</small></div>
+        </div>
+
+        <div class="section-head">
+          <div><div class="eyebrow">TODAY</div><h2>它现在在干嘛？</h2></div>
+          <span class="tiny-time" id="clockText"></span>
+        </div>
+        <div class="activity-card" id="activityCard">
+          <div class="activity-icon">◫</div>
+          <div class="activity-copy">
+            <b id="activityTitle">正在整理旧明信片</b>
+            <span id="activityDesc">它把「月湾车站」那张翻出来看了第三遍。</span>
+          </div>
+          <div class="activity-mood" id="activityMood">好奇</div>
+        </div>
+
+        <div class="cta-card" id="travelCta">
+          <div>
+            <span class="eyebrow">NEXT TRIP</span>
+            <h3 id="ctaTitle">行囊已经空了</h3>
+            <p id="ctaDesc">放点东西进去，剩下的交给 NOA。</p>
+          </div>
+          <button class="primary-btn" data-go="travel" id="ctaButton">准备旅行</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="travel">
+        <div class="page-title">
+          <div><div class="eyebrow">TRAVEL</div><h1>这次去哪？<br><span>它自己决定。</span></h1></div>
+          <div class="round-badge">↝</div>
+        </div>
+
+        <div class="travel-visual" id="travelVisual">
+          <img src="./assets/travel-window.svg" alt="PiXO 旅行中的原创插画" />
+          <div class="travel-overlay">
+            <span id="travelStateLabel">尚未出发</span>
+            <strong id="travelTimer">--:--</strong>
+          </div>
+        </div>
+
+        <div class="panel" id="prepPanel">
+          <div class="panel-head"><b>给它准备点东西</b><span>最多 2 件</span></div>
+          <div class="item-grid" id="itemGrid"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><b>当前 Halo</b><button class="mini-link" data-go="pixo">更换</button></div>
+          <div class="halo-summary">
+            <img id="travelHaloIcon" src="./assets/halo-swift.svg" alt="Halo 图标" />
+            <div><strong id="travelHaloName">疾行 Halo</strong><p id="travelHaloDesc">它会更快回来，但仍然可能因为路痴绕远路。</p></div>
+          </div>
+        </div>
+
+        <button class="primary-btn wide" id="startTravelBtn">让 NOA 出发</button>
+        <button class="ghost-btn wide hidden" id="finishTravelBtn">Demo：快速让它回来</button>
+
+        <div class="live-log hidden" id="liveLog">
+          <div class="eyebrow">LIVE SIGNAL</div>
+          <div id="logEntries"></div>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="memory">
+        <div class="page-title compact">
+          <div><div class="eyebrow">MEMORY</div><h1>它经历过的，<br><span>不会被清零。</span></h1></div>
+        </div>
+        <div class="memory-feature">
+          <img src="./assets/postcard-moonbay.svg" alt="月湾车站旅行明信片" />
+          <div class="memory-caption"><span>RARE MEMORY · 2026.08.08</span><b>「末班车没有终点」</b></div>
+        </div>
+        <div class="timeline" id="memoryTimeline"></div>
+      </section>
+
+      <section class="screen" data-screen="collection">
+        <div class="page-title compact">
+          <div><div class="eyebrow">COLLECTION</div><h1>它从世界里<br><span>捡回来的东西。</span></h1></div>
+          <div class="count-badge"><strong id="collectionCount">8</strong><span>件</span></div>
+        </div>
+        <div class="shelf" id="collectionShelf"></div>
+      </section>
+
+      <section class="screen" data-screen="pixo">
+        <div class="pixo-profile-card">
+          <img src="./assets/pixo-portrait.svg" alt="NOA 的原创角色档案图" />
+          <div class="profile-overlay">
+            <div class="eyebrow">PIXO #002813</div>
+            <h1>NOA</h1>
+            <p>“嘴上说不想出门，出门以后最不想回来。”</p>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div><span>旅行</span><b id="tripCount">12</b><small>次</small></div>
+          <div><span>Memory</span><b id="memoryCount">7</b><small>段</small></div>
+          <div><span>最远</span><b>428</b><small>km</small></div>
+        </div>
+
+        <div class="section-head"><div><div class="eyebrow">HALO</div><h2>它擅长什么</h2></div></div>
+        <div class="halo-picker" id="haloPicker"></div>
+
+        <div class="section-head"><div><div class="eyebrow">TRAIT</div><h2>它天生这样</h2></div></div>
+        <div class="trait-detail">
+          <div><span>☾</span><section><b>夜猫子</b><p>19:00—05:00 更容易主动出发，并进入夜间事件池。</p></section></div>
+          <div><span>↝</span><section><b>路痴</b><p>平均旅行耗时 +8%，但更容易撞见隐藏事件。</p></section></div>
+        </div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="nav-item active" data-go="home"><span>⌂</span><b>家</b></button>
+        <button class="nav-item" data-go="travel"><span>↝</span><b>旅行</b></button>
+        <button class="nav-item" data-go="memory"><span>◈</span><b>记忆</b></button>
+        <button class="nav-item" data-go="collection"><span>▦</span><b>收藏</b></button>
+        <button class="nav-item" data-go="pixo"><span>◎</span><b>PiXO</b></button>
+      </nav>
+    </section>
+
+    <aside class="desktop-note">
+      <div class="mono">PIXO LIFE / INTERACTIVE PROTOTYPE</div>
+      <h2>它不是一只<br>等你喂饭的宠物。</h2>
+      <p>你只能准备。它自己生活、自己旅行、自己把世界带回来。</p>
+      <div class="demo-tips">
+        <span>01</span><p>进入「旅行」准备两件物品</p>
+        <span>02</span><p>让 NOA 出发，观察途中消息</p>
+        <span>03</span><p>快速结束旅行，看 Memory 与收藏变化</p>
+      </div>
+      <div class="desktop-signature">FORM × FACE × TRAIT × HALO × MEMORY</div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
