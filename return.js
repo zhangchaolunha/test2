@@ -57,10 +57,14 @@ document.getElementById('returnQuote').textContent = quotes[draft.duration] || q
 
 const memory = {
   id: 'first-sea',
+  type: 'explore',
   title: '第一次看见大海',
   destination: draft.destination || '海边小镇',
   createdAt: new Date().toISOString(),
-  text: 'Mochi 第一次真正走到海岸边。浪花很吵，它却在那里坐了很久。'
+  date: new Date().toISOString(),
+  text: 'Mochi 第一次真正走到海岸边。浪花很吵，它却在那里坐了很久。',
+  image: './assets/memory/memory-first-sea.webp',
+  tags: ['海边', '灯塔', '首次']
 };
 
 const lastReturn = {
@@ -88,7 +92,7 @@ document.querySelectorAll('[data-reward]').forEach(button => {
 });
 
 document.getElementById('memoryUnlock').addEventListener('click', () => {
-  showToast('Memory 已保存 · 第 6 页会展示完整时间线');
+  location.href = './memory.html';
 });
 
 document.getElementById('returnInfo').addEventListener('click', () => {
