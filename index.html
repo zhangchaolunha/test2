@@ -9,92 +9,219 @@
 </head>
 <body>
   <main class="page-shell">
+
     <!-- PAGE 01 / HOME -->
     <section class="page-view" data-page="home">
       <section class="pixo-screen home-screen" id="homeScreen" aria-label="PiXO 首页">
-        <img class="home-slice hero-slice" src="./assets/home/home-hero.webp" alt="PiXO 首页上半部分像素场景" draggable="false" />
-        <img class="home-slice lower-slice" src="./assets/home/home-lower.webp" alt="PiXO 首页属性、事件、Memory 与菜单" draggable="false" />
-        <button class="hotspot profile" data-route="detail" aria-label="查看 Mochi 详情"></button>
-        <button class="hotspot resource coin" data-action="coin" aria-label="金币"></button>
-        <button class="hotspot resource gem" data-action="gem" aria-label="钻石"></button>
-        <button class="hotspot resource energy" data-action="energy" aria-label="体力"></button>
-        <button class="hotspot side activity" data-action="activity" aria-label="活动"></button>
-        <button class="hotspot side travel-side" data-route="travel" aria-label="旅行"></button>
-        <button class="hotspot side collection-side" data-route="collection" aria-label="收藏"></button>
-        <button class="hotspot side shop-side" data-route="shop" aria-label="商店"></button>
-        <button class="hotspot event-mail" data-action="event" aria-label="查看今日事件"></button>
-        <button class="hotspot memory-card" data-route="memory" aria-label="查看海边记忆"></button>
-        <button class="hotspot nav diary" data-route="diary" aria-label="日志"></button>
-        <button class="hotspot nav travel" data-route="travel" aria-label="旅行"></button>
-        <button class="hotspot nav collection" data-route="collection" aria-label="收藏"></button>
-        <button class="hotspot nav mypixo" data-route="mypixo" aria-label="我的 PiXO"></button>
-        <button class="hotspot nav shop" data-route="shop" aria-label="商店"></button>
-        <div class="tap-wave"></div>
+        <header class="game-topbar">
+          <button class="pixo-logo" data-route="home" aria-label="PiXO 首页">PiXO</button>
+          <div class="resource-row">
+            <button class="resource-chip" data-action="coin"><span>🪙</span><b>12,560</b><i>+</i></button>
+            <button class="resource-chip" data-action="gem"><span>💎</span><b>385</b><i>+</i></button>
+            <button class="resource-chip" data-action="energy"><span>⚡</span><b>28/30</b><i>+</i></button>
+          </div>
+        </header>
+
+        <section class="home-profile-card pixel-panel">
+          <button class="avatar-button" data-route="detail" aria-label="查看 Mochi 详情">
+            <img src="./assets/pixo-portrait.svg" alt="Mochi" />
+          </button>
+          <div class="home-profile-copy">
+            <div class="name-row"><strong>Mochi</strong><span>♥</span></div>
+            <p>正在休息中 <span class="moon">☾</span></p>
+            <div class="level-row"><b>Lv.12</b><div class="mini-progress"><i style="width:32%"></i></div><small>320 / 1000</small></div>
+          </div>
+          <button class="tiny-square" data-action="activity" aria-label="活动">🎁</button>
+        </section>
+
+        <section class="home-scene pixel-panel scene-panel">
+          <img src="./assets/pixo-home.svg" alt="Mochi 在家休息" />
+          <div class="speech-bubble">呼…睡够了，<br />太阳好暖。</div>
+          <div class="scene-actions">
+            <button data-route="travel"><span>🧭</span><b>旅行</b></button>
+            <button data-route="collection"><span>🐾</span><b>收藏</b></button>
+            <button data-route="shop"><span>🏪</span><b>商店</b></button>
+          </div>
+        </section>
+
+        <section class="home-stats pixel-paper">
+          <div class="section-kicker">属性</div>
+          <div class="stat-grid">
+            <button class="stat-box" data-action="stat-heart"><span>♥</span><b>温柔</b><em>86</em></button>
+            <button class="stat-box" data-action="stat-star"><span>★</span><b>好奇</b><em>78</em></button>
+            <button class="stat-box" data-action="stat-drop"><span>◆</span><b>治愈</b><em>92</em></button>
+            <div class="stat-level"><b>Lv.12</b><div class="exp-track"><i style="width:32%"></i></div><small>320 / 1000</small></div>
+          </div>
+        </section>
+
+        <section class="today-card pixel-paper">
+          <div class="today-icon">🌼</div>
+          <div><small>今日事件</small><strong>心情很好</strong><span>+15 EXP</span></div>
+          <button data-action="event" aria-label="查看今日事件">💌<i>1</i></button>
+        </section>
+
+        <button class="memory-preview pixel-paper" onclick="location.href='./memory.html'" aria-label="查看 Memory">
+          <img src="./assets/postcard-moonbay.svg" alt="海边记忆" />
+          <div><small>海边记忆</small><strong>第一次看见大海</strong><p>Mochi 很享受海边的时光，带回了漂亮的贝壳。</p><span>🐚 蓝色贝壳 ×3</span></div>
+          <b>›</b>
+        </button>
+
+        <section class="home-menu" aria-label="首页功能入口">
+          <button data-action="diary"><span>📓</span><b>日志</b></button>
+          <button data-route="travel"><span>🗺️</span><b>旅行</b></button>
+          <button data-route="collection"><span>🧰</span><b>收藏</b></button>
+          <button data-route="detail"><img src="./assets/pixo-portrait.svg" alt="" /><b>我的 PiXO</b></button>
+          <button data-route="shop"><span>🏪</span><b>商店</b></button>
+        </section>
       </section>
     </section>
 
     <!-- PAGE 02 / PIXO DETAIL -->
     <section class="page-view" data-page="detail" hidden>
       <section class="pixo-screen detail-screen" id="detailScreen" aria-label="PiXO 详情">
-        <img class="detail-slice" src="./assets/detail/detail-header.webp" alt="PiXO 详情页顶部" draggable="false" />
-        <img class="detail-slice" src="./assets/detail/detail-hero.webp" alt="Mochi 主视觉与等级" draggable="false" />
-        <img class="detail-slice" src="./assets/detail/detail-traits.webp" alt="Form Face Trait Halo" draggable="false" />
-        <img class="detail-slice" src="./assets/detail/detail-items.webp" alt="携带物品" draggable="false" />
-        <img class="detail-slice" src="./assets/detail/detail-cta.webp" alt="出发按钮" draggable="false" />
-        <button class="detail-hit detail-back" data-route="home" aria-label="返回首页"></button>
-        <button class="detail-hit detail-edit" data-action="edit-pixo" aria-label="编辑 PiXO"></button>
-        <button class="detail-hit detail-tab tab-form selected" data-detail-tab="Form" aria-label="Form"></button>
-        <button class="detail-hit detail-tab tab-face" data-detail-tab="Face" aria-label="Face"></button>
-        <button class="detail-hit detail-tab tab-trait" data-detail-tab="Trait" aria-label="Trait"></button>
-        <button class="detail-hit detail-tab tab-halo" data-detail-tab="Halo" aria-label="Halo"></button>
-        <button class="detail-hit item-slot item-1 selected" data-item="能量饮料" aria-label="能量饮料"></button>
-        <button class="detail-hit item-slot item-2 selected" data-item="探险锤" aria-label="探险锤"></button>
-        <button class="detail-hit item-slot item-3 selected" data-item="旅行票" aria-label="旅行票"></button>
-        <button class="detail-hit detail-start" data-route="travel" aria-label="装备 Mochi 出发"></button>
-        <div class="tap-wave"></div>
+        <header class="page-topbar">
+          <button class="back-btn" data-route="home" aria-label="返回首页">‹</button>
+          <h1>PiXO 详情</h1>
+          <button class="icon-btn" data-action="edit-pixo" aria-label="编辑">✎</button>
+        </header>
+
+        <section class="detail-profile pixel-paper light">
+          <div class="detail-name-row">
+            <img src="./assets/pixo-portrait.svg" alt="Mochi" />
+            <div><div><strong>Mochi</strong><small>#00001287</small></div><div class="trait-chips"><span>🟠 温柔</span><span>🔵 好奇</span><span>💧 治愈</span></div></div>
+          </div>
+          <div class="detail-level"><b>Lv.12</b><div class="exp-track"><i style="width:32%"></i></div><span>320 / 1000</span></div>
+        </section>
+
+        <section class="detail-hero pixel-paper light">
+          <img src="./assets/pixo-portrait.svg" alt="Mochi 像素立绘" />
+        </section>
+
+        <nav class="detail-tabs">
+          <button class="selected" data-detail-tab="Form">Form</button>
+          <button data-detail-tab="Face">Face</button>
+          <button data-detail-tab="Trait">Trait</button>
+          <button data-detail-tab="Halo">Halo</button>
+        </nav>
+
+        <section class="detail-panel pixel-paper light" id="detailPanel">
+          <div class="detail-property-grid">
+            <button data-action="detail-form"><span class="round-art">🐱</span><small>Form</small><b>猫系</b></button>
+            <button data-action="detail-face"><span class="round-art">😺</span><small>Face</small><b>好奇</b></button>
+            <button data-action="detail-trait"><span class="round-art">🧭</span><small>Trait</small><b>路痴</b></button>
+            <button data-action="detail-halo"><img src="./assets/halo-swift.svg" alt="探索环" /><small>Halo</small><b>探索环</b></button>
+          </div>
+          <p class="detail-description" id="detailDescription">猫系 Form 决定 Mochi 的基础外形与部分动作表现。</p>
+        </section>
+
+        <section class="carry-card pixel-paper light">
+          <div class="section-title-row"><div><small>TRAVEL KIT</small><h3>旅行携带物品</h3></div><span id="detailItemCount">3 / 3</span></div>
+          <div class="carry-grid">
+            <button class="carry-item selected" data-item="能量饮料"><span>🧃</span><b>能量饮料</b><small>体力恢复 +20%</small></button>
+            <button class="carry-item selected" data-item="探险锤"><span>🔨</span><b>探险锤</b><small>提升寻宝机会</small></button>
+            <button class="carry-item selected" data-item="旅行票"><span>🎟️</span><b>旅行票</b><small>提高远行概率</small></button>
+          </div>
+        </section>
+
+        <button class="primary-pixel-btn page-cta" data-route="travel">装备 Mochi 出发 🚀</button>
       </section>
     </section>
 
     <!-- PAGE 03 / PREPARE TRAVEL -->
     <section class="page-view" data-page="travel" hidden>
       <section class="pixo-screen travel-screen" id="travelScreen" aria-label="准备旅行">
-        <img class="travel-prep-art" src="./assets/travel/prepare-page.webp" alt="PiXO 准备旅行页面" draggable="false" />
-        <button class="travel-hit travel-back" data-route="detail" aria-label="返回 PiXO 详情"></button>
-        <button class="travel-hit travel-help" data-action="travel-help" aria-label="旅行说明"></button>
-        <button class="travel-hit destination-hit" data-action="destination" aria-label="查看海边小镇"></button>
-        <button class="travel-duration duration-short" data-duration="short">短途</button>
-        <button class="travel-duration duration-normal selected" data-duration="normal">✦ 普通</button>
-        <button class="travel-duration duration-long" data-duration="long">长途</button>
-        <div class="travel-count" id="travelItemCount">携带物品（3/5）</div>
-        <button class="travel-item selected item-drink" data-travel-item="能量饮料" aria-label="能量饮料"></button>
-        <button class="travel-item selected item-tool" data-travel-item="寻宝工具" aria-label="寻宝工具"></button>
-        <button class="travel-item selected item-ticket" data-travel-item="旅行票" aria-label="旅行票"></button>
-        <button class="travel-item empty item-empty-1" data-action="empty-slot" aria-label="空物品槽"></button>
-        <button class="travel-item empty item-empty-2" data-action="empty-slot" aria-label="空物品槽"></button>
-        <button class="travel-start" id="travelStartBtn" aria-label="让 Mochi 出发"></button>
+        <header class="page-topbar">
+          <button class="back-btn" data-route="detail" aria-label="返回详情">‹</button>
+          <h1>准备旅行</h1>
+          <button class="icon-btn" data-action="travel-help" aria-label="旅行说明">?</button>
+        </header>
+
+        <section class="destination-card pixel-paper light" data-action="destination">
+          <img src="./assets/postcard-moonbay.svg" alt="海边小镇" />
+          <div><small>POSSIBLE DESTINATION</small><h2>海边小镇</h2><p>阳光、沙滩、海风，还有一座总亮着灯的灯塔。</p><div class="tag-row"><span>海边</span><span>市集</span><span>灯塔</span></div></div>
+          <b>›</b>
+        </section>
+
+        <section class="travel-block pixel-paper light">
+          <div class="section-title-row"><div><small>TRAVEL STYLE</small><h3>旅行倾向</h3></div><span id="durationHint">2～8 小时</span></div>
+          <div class="segmented-control">
+            <button data-duration="short">短途<small>30m～2h</small></button>
+            <button class="selected" data-duration="normal">✦ 普通<small>2h～8h</small></button>
+            <button data-duration="long">长途<small>8h～24h</small></button>
+          </div>
+        </section>
+
+        <section class="travel-block pixel-paper light">
+          <div class="section-title-row"><div><small>TRAVEL KIT</small><h3>携带物品</h3></div><span id="travelItemCount">3 / 5</span></div>
+          <div class="travel-kit-grid">
+            <button class="travel-kit-item selected" data-travel-item="能量饮料"><span>🧃</span><b>能量饮料</b><small>恢复体力</small></button>
+            <button class="travel-kit-item selected" data-travel-item="寻宝工具"><span>🔨</span><b>寻宝工具</b><small>额外寻宝</small></button>
+            <button class="travel-kit-item selected" data-travel-item="旅行票"><span>🎟️</span><b>旅行票</b><small>提高远行</small></button>
+            <button class="travel-kit-item empty" data-action="empty-slot"><span>＋</span><b>空槽位</b><small>可继续添加</small></button>
+            <button class="travel-kit-item empty" data-action="empty-slot"><span>＋</span><b>空槽位</b><small>可继续添加</small></button>
+          </div>
+        </section>
+
+        <section class="halo-summary pixel-paper light">
+          <div class="halo-orbit"><img src="./assets/halo-swift.svg" alt="探索环" /></div>
+          <div><small>CURRENT HALO</small><strong>探索环</strong><p>减少重复地点，提高发现新地点和特殊路线的概率。</p></div>
+          <span>Lv.2</span>
+        </section>
+
+        <section class="travel-estimate pixel-panel">
+          <div><span>预计时长</span><b id="estimateTime">约 3小时28分</b></div>
+          <div><span>事件倾向</span><b id="estimateEvent">均衡 · 探索</b></div>
+          <div><span>携带数量</span><b id="estimateItems">3 件</b></div>
+        </section>
+
+        <button class="primary-pixel-btn page-cta" id="travelStartBtn">让 Mochi 出发 🚀</button>
         <div class="travel-draft" id="travelDraft">海边小镇 · 普通 · 3 件物品</div>
-        <div class="tap-wave"></div>
       </section>
     </section>
 
     <!-- PAGE 04 / TRAVELING -->
     <section class="page-view" data-page="traveling" hidden>
       <section class="pixo-screen traveling-screen" id="travelingScreen" aria-label="旅行中">
-        <img class="traveling-art" src="./assets/traveling/traveling-page.webp" alt="PiXO 旅行中页面" draggable="false" />
-        <button class="traveling-hit traveling-back" data-route="travel" aria-label="返回准备旅行"></button>
-        <button class="traveling-hit traveling-camera" data-action="traveling-camera" aria-label="旅行快照"></button>
-        <div class="traveling-time" id="travelingRemaining">3小时28分</div>
-        <div class="traveling-log" id="travelingLog"></div>
-        <div class="traveling-summary" id="travelingSummary">普通 · 探索环 · 3件物品</div>
-        <button class="traveling-fast" id="travelingFastBtn">Demo · 快速推进 1 小时</button>
-        <div class="tap-wave"></div>
+        <header class="page-topbar dark-topbar">
+          <button class="back-btn" data-route="travel" aria-label="返回准备旅行">‹</button>
+          <h1>旅行中</h1>
+          <button class="icon-btn" data-action="traveling-camera" aria-label="旅行快照">📷</button>
+        </header>
+
+        <section class="travel-map-card pixel-paper light">
+          <div class="map-status"><img src="./assets/pixo-portrait.svg" alt="Mochi" /><div><small>MOCHI SIGNAL</small><b>正在旅行…</b></div></div>
+          <img class="travel-map-image" src="./assets/traveling/traveling-map.webp" alt="海边旅行路线" />
+          <div class="route-line"></div>
+          <span class="map-pin pin-a">●</span>
+          <span class="map-pin pin-b">●</span>
+          <div class="time-bubble"><small>预计剩余</small><strong id="travelingRemaining">3小时28分</strong></div>
+        </section>
+
+        <section class="traveling-info pixel-paper light">
+          <div><small>目的地</small><b id="travelingDestination">海边小镇</b></div>
+          <div><small>旅行类型</small><b id="travelingType">普通</b></div>
+          <div><small>Halo</small><b id="travelingHalo">探索环</b></div>
+        </section>
+
+        <section class="message-card pixel-paper light">
+          <div class="section-title-row"><div><small>LIVE LOG</small><h3>途中消息</h3></div><span>自动更新</span></div>
+          <div class="traveling-log" id="travelingLog"></div>
+        </section>
+
+        <section class="traveling-kit pixel-paper light">
+          <div class="section-title-row"><div><small>TRIP LOADOUT</small><h3>本次携带</h3></div><span id="travelingItemCount">3 件</span></div>
+          <div class="mini-kit" id="travelingKit"></div>
+          <div class="traveling-summary" id="travelingSummary">普通 · 探索环 · 3件物品</div>
+        </section>
+
+        <button class="primary-pixel-btn page-cta" id="travelingFastBtn">Demo · 快速推进 1 小时</button>
       </section>
     </section>
 
     <aside class="build-note" id="buildNote">
       <span id="buildPage">PAGE 01 / HOME</span>
-      <strong id="buildTitle">首页 · 像素生活场景</strong>
-      <p id="buildText">点击左上 Mochi 资料卡进入第 2 页；也可以直接点击旅行进入第 3 页。</p>
+      <strong id="buildTitle">首页 · HTML 组件化</strong>
+      <p id="buildText">第 1～4 页已经从整页截图改成真实 DOM：图片只承担场景、角色、地图等内容，按钮、文字、卡片和状态都由 HTML/CSS/JS 构成。</p>
     </aside>
   </main>
 
@@ -102,8 +229,8 @@
     <div class="preview-panel">
       <button class="preview-close" id="previewClose">×</button>
       <small>NEXT PAGE</small>
-      <h2 id="previewTitle">旅行回来</h2>
-      <p id="previewText">下一页继续按照“大图 → 小图 → 代码 → 交互”的顺序实现。</p>
+      <h2 id="previewTitle">下一页</h2>
+      <p id="previewText">该页面还未实现。</p>
       <button class="preview-primary" id="previewBack">返回当前页面</button>
     </div>
   </div>
